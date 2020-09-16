@@ -16,9 +16,18 @@ export default class TodoInput extends Component {
             type="text"
             className="form-control"
             placeholder="Add Todo Item"
+            value={item}
           />
-          <button type="submit" className="btn-block btn btn-info mt-3">
-            Add Item
+          <button
+            type="submit"
+            disabled={item ? false : true}
+            className={
+              isEdit
+                ? "btn-block btn btn-success mt-3"
+                : "btn-block btn btn-info mt-3"
+            }
+          >
+            {isEdit ? "Edit Item" : "Add Item"}
           </button>
         </div>
       </form>
